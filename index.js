@@ -32,6 +32,12 @@ module.exports = {
    */
   'c11': algorithms.c11,
 
+    /**
+   * @param input {Buffer} Initial buffer to hash
+   * @returns {Buffer} Hashing result
+   */
+     'curvehash': algorithms.curvehash,
+
   /**
    * @param header {Buffer} Equihash header hash
    * @param solution {Buffer} Equihash solution hash
@@ -41,6 +47,16 @@ module.exports = {
    * @returns {boolean} True if valid, otherwise false.
    */
   'equihash': algorithms.equihash,
+
+  /**
+   * @param headerHashBuf {Buffer} 32-byte header hash
+   * @param nonceBuf {Buffer} 8-byte nonce value (64-bits)
+   * @param blockHeight {number} Block height integer
+   * @param mixHashBuf {Buffer} Mix hash for verification
+   * @param hashOutBuf {Buffer} Hash result output Buffer
+   * @returns {boolean} True if valid, otherwise false.
+   */
+   'evrprogpow': algorithms.evrprogpow,
 
   /**
    * @param headerHashBuf {Buffer} 32-byte header hash
@@ -70,6 +86,13 @@ module.exports = {
    */
   'groestl': algorithms.groestl,
 
+    /**
+   * @param input {Buffer} Initial buffer to hash
+   * @returns {Buffer} Hashing result
+   */
+  'groestlmyriad': algorithms.groestlmyriad,
+  'myr-gr': algorithms.groestlmyriad,
+
   /**
    * @param headerHashBuf {Buffer} 32-byte header hash
    * @param nonceBuf {Buffer} 8-byte nonce value (64-bits)
@@ -85,6 +108,33 @@ module.exports = {
    * @returns {Buffer} Hashing result
    */
   'keccak': algorithms.keccak,
+
+  /**
+   * @param input {Buffer} Initial buffer to hash
+   * @returns {Buffer} Hashing result
+   */
+  'lyra2re': algorithms.lyra2re,
+
+  /**
+   * @param headerHashBuf {Buffer} 32-byte header hash
+   * @param nonceBuf {Buffer} 8-byte nonce value (64-bits)
+   * @param blockHeight {number} Block height integer
+   * @param mixHashBuf {Buffer} Mix hash for verification
+   * @param hashOutBuf {Buffer} Hash result output Buffer
+   * @returns {boolean} True if valid, otherwise false.
+   */
+  'meowpow': algorithms.meowpow,
+
+
+  /**
+   * @param headerHashBuf {Buffer} 32-byte header hash
+   * @param nonceBuf {Buffer} 8-byte nonce value (64-bits)
+   * @param blockHeight {number} Block height integer
+   * @param mixHashBuf {Buffer} Mix hash for verification
+   * @param hashOutBuf {Buffer} Hash result output Buffer
+   * @returns {boolean} True if valid, otherwise false.
+   */
+  'meraki': algorithms.meraki,
 
   /**
    * @param input {Buffer} Initial buffer to hash
@@ -134,6 +184,12 @@ module.exports = {
    * @param input {Buffer} Initial buffer to hash
    * @returns {Buffer} Hashing result
    */
+  'sha512256d': algorithms.sha512256d,
+
+  /**
+   * @param input {Buffer} Initial buffer to hash
+   * @returns {Buffer} Hashing result
+   */
   'skein': algorithms.skein,
 
   /**
@@ -177,4 +233,9 @@ module.exports = {
    * @returns {Buffer} Hashing result
    */
   'x16rv2': algorithms.x16rv2,
-}
+  /**
+   * @param input {Buffer} Initial buffer to hash
+   * @returns {Buffer} Hashing result
+   */
+   'x17': algorithms.x17,
+  }

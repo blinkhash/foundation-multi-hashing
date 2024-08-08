@@ -15,12 +15,14 @@
                 "algorithms/main/ghostrider/ghostrider.c",
                 "algorithms/main/groestl/groestl.c",
                 "algorithms/main/keccak/keccak.c",
+                "algorithms/main/lyra2re/lyra2re.c",
                 "algorithms/main/minotaur/minotaur.c",
                 "algorithms/main/nist5/nist5.c",
                 "algorithms/main/quark/quark.c",
                 "algorithms/main/qubit/qubit.c",
                 "algorithms/main/scrypt/scrypt.c",
                 "algorithms/main/sha256d/sha256d.c",
+                "algorithms/main/sha512256d/sha512256d.c",
                 "algorithms/main/skein/skein.c",
                 "algorithms/main/verthash/verthash.c",
                 "algorithms/main/x11/x11.c",
@@ -28,13 +30,22 @@
                 "algorithms/main/x15/x15.c",
                 "algorithms/main/x16r/x16r.c",
                 "algorithms/main/x16rt/x16rt.c",
+                "algorithms/main/x17/x17.c",
                 "algorithms/main/yespower/yespower.c",
 
                 # ProgPow Sources
+                "algorithms/main/evrprogpow/evrprogpow.cpp",
+                "algorithms/main/evrprogpow/evrprogpow_progpow.cpp",
                 "algorithms/main/firopow/firopow.cpp",
                 "algorithms/main/firopow/firopow_progpow.cpp",
                 "algorithms/main/kawpow/kawpow.cpp",
                 "algorithms/main/kawpow/kawpow_progpow.cpp",
+                "algorithms/main/meowpow/meowpow.cpp",
+                "algorithms/main/meowpow/meowpow_progpow.cpp",
+                "algorithms/main/meraki/meraki.cpp",
+                "algorithms/main/meraki/meraki_progpow.cpp",
+		
+                "algorithms/main/curvehash/curvehash.cpp",
 
                 # Common Sources
                 "algorithms/main/common/utils/lyra2.c",
@@ -89,6 +100,9 @@
                 "algorithms/main/common/ethash/keccak/keccak.c",
                 "algorithms/main/common/ethash/keccak/keccakf800.c",
                 "algorithms/main/common/ethash/keccak/keccakf1600.c",
+                "algorithms/main/secp256k1/src/secp256k1.c",
+                "algorithms/main/secp256k1/src/precomputed_ecmult.c",
+                "algorithms/main/secp256k1/src/precomputed_ecmult_gen.c",
             ],
             "include_dirs": [
                 ".",

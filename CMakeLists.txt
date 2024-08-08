@@ -16,6 +16,7 @@ file(GLOB multihashing_SRC
 if (CMAKE_JS_VERSION)
 
     set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++ -static")
+    set(secp256k1_libs)
 
     # add node include directories, fix potential backslashes
     foreach(CMAKE_JS_INC_ITEM ${CMAKE_JS_INC})
@@ -30,6 +31,7 @@ if (CMAKE_JS_VERSION)
     include_directories(${PROJECT_NAME} PUBLIC "./src")
 
     # include static libraries
+    include(ProjectSecp256k1)
 
     add_library(${PROJECT_NAME} SHARED ${multihashing_SRC} "multihashing.cc")
     set_target_properties(${PROJECT_NAME} PROPERTIES PREFIX "" SUFFIX ".node")

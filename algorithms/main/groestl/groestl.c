@@ -25,15 +25,15 @@ void groestl_hash(const char* input, char* output, uint32_t len)
 
 void groestlmyriad_hash(const char* input, char* output, uint32_t len)
 {
-    char temp[64];
+    char hash1[64];
 
     sph_groestl512_context ctx_groestl;
     sph_groestl512_init(&ctx_groestl);
     sph_groestl512(&ctx_groestl, input, len);
-    sph_groestl512_close(&ctx_groestl, &temp);
+    sph_groestl512_close(&ctx_groestl, &hash1);
 
     SHA256_CTX ctx_sha256;
     SHA256_Init(&ctx_sha256);
-    SHA256_Update(&ctx_sha256, &temp, 64);
+    SHA256_Update(&ctx_sha256, &hash1, 64);
     SHA256_Final((unsigned char*) output, &ctx_sha256);
 }

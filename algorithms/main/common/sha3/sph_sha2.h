@@ -43,6 +43,10 @@
 #include <stddef.h>
 #include "sph_types.h"
 
+#ifdef __cplusplus
+extern "C"{
+#endif
+
 /**
  * Output size (in bits) for SHA-224.
  */
@@ -307,6 +311,7 @@ typedef sph_sha384_context sph_sha512_context;
  *             a <code>sph_sha512_context</code>)
  */
 void sph_sha512_init(void *cc);
+void sph_sha512_256_init(void *cc);
 
 #ifdef DOXYGEN_IGNORE
 /**
@@ -368,3 +373,7 @@ void sph_sha512_comp(const sph_u64 msg[16], sph_u64 val[8]);
 #endif
 
 #endif
+#ifdef __cplusplus
+}
+#endif
+

@@ -35,6 +35,10 @@
 
 #include "sph_sha2.h"
 
+#ifdef __cplusplus
+extern "C"{
+#endif
+
 #if SPH_64
 
 #define CH(X, Y, Z)    ((((Y) ^ (Z)) & (X)) ^ (Z))
@@ -102,6 +106,13 @@ static const sph_u64 H512[8] = {
 	SPH_C64(0x3C6EF372FE94F82B), SPH_C64(0xA54FF53A5F1D36F1),
 	SPH_C64(0x510E527FADE682D1), SPH_C64(0x9B05688C2B3E6C1F),
 	SPH_C64(0x1F83D9ABFB41BD6B), SPH_C64(0x5BE0CD19137E2179)
+};
+
+static const sph_u64 H512_256[8] = {
+	SPH_C64(0x22312194FC2BF72C), SPH_C64(0x9F555FA3C84C64C2),
+	SPH_C64(0x2393B86B6F53B151), SPH_C64(0x963877195940EABD),
+	SPH_C64(0x96283EE2A88EFFE3), SPH_C64(0xBE5E1E2553863992),
+	SPH_C64(0x2B0199FC2C85B8AA), SPH_C64(0x0EB72DDC81C52CA2),
 };
 
 /*
@@ -198,6 +209,16 @@ sph_sha512_init(void *cc)
 	sc->count = 0;
 }
 
+void
+sph_sha512_256_init(void *cc)
+{
+	sph_sha512_context *sc;
+
+	sc = cc;
+	memcpy(sc->val, H512_256, sizeof H512_256);
+	sc->count = 0;
+}
+
 #define RFUN   sha3_round
 #define HASH   sha384
 #define BE64   1
@@ -245,3 +266,7 @@ sph_sha384_comp(const sph_u64 msg[16], sph_u64 val[8])
 }
 
 #endif
+#ifdef __cplusplus
+}
+#endif
+

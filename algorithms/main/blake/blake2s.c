@@ -4,7 +4,8 @@
 #include <string.h>
 #include <stdio.h>
 
-#include "../common/sha3/sph_blake2s.h"
+#include "blake2s.h"
+#include "../common/sha3/blake2s.h"
 
 void blake2s_hash(const char* input, char* output)
 {
