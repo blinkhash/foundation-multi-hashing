@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "bindings": "^1.3.0",
-    "libsodium": "^0.7.3",
+    "libsodium": "^0.7.15",
     "nan": "^2.15.0",
     "node-gyp": "^9.0.0"
   },
